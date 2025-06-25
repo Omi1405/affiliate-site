@@ -24,6 +24,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f4f4f4;
       color: #222;
+      line-height: 1.5;
     }
 
     .navbar {
@@ -32,7 +33,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 24px;
+      padding: 10px 16px;
       color: var(--text-light);
       position: sticky;
       top: 0;
@@ -40,7 +41,7 @@
     }
 
     .logo {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: bold;
       color: var(--primary-color);
     }
@@ -53,7 +54,7 @@
 
     .search-box input {
       width: 100%;
-      padding: 8px 14px;
+      padding: 8px 12px;
       border-radius: 4px;
       border: none;
       outline: none;
@@ -80,10 +81,10 @@
     }
 
     .product-container {
-      padding: 30px 20px;
+      padding: 20px 16px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
       max-width: 1200px;
       margin: auto;
     }
@@ -91,7 +92,7 @@
     .product {
       background-color: #fff;
       border-radius: 10px;
-      padding: 16px;
+      padding: 14px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -104,21 +105,21 @@
 
     .product img {
       width: 100%;
-      max-height: 200px;
+      max-height: 180px;
       object-fit: contain;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .product h3 {
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 600;
       min-height: 48px;
-      margin: 10px 0;
+      margin: 8px 0;
     }
 
     .price {
       color: #b12704;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: bold;
     }
 
@@ -126,7 +127,7 @@
       text-decoration: line-through;
       color: #565959;
       font-size: 0.9rem;
-      margin-left: 8px;
+      margin-left: 6px;
     }
 
     .discount {
@@ -138,7 +139,7 @@
     .product a {
       display: inline-block;
       margin-top: 10px;
-      padding: 10px 16px;
+      padding: 8px 14px;
       background-color: var(--primary-color);
       color: var(--text-dark);
       font-weight: bold;
@@ -156,40 +157,49 @@
       background-color: var(--secondary-color);
       color: var(--text-light);
       text-align: center;
-      padding: 20px;
-      font-size: 0.95rem;
-      margin-top: 40px;
+      padding: 16px;
+      font-size: 0.9rem;
+      margin-top: 30px;
     }
 
     @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 8px 16px; /* Reduced padding */
-  }
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 12px;
+      }
 
-  .search-box {
-    width: 100%;
-    margin: 6px 0; /* Smaller margin */
-  }
+      .logo {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+      }
 
-  .nav-links {
-    width: 100%;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    margin-top: 4px; /* Reduce spacing below search */
-  }
+      .search-box {
+        width: 100%;
+        margin: 6px 0;
+      }
 
-  .nav-links a {
-    margin: 4px 8px;
-  }
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 6px;
+      }
 
-  .product h3 {
-    font-size: 0.95rem;
-    min-height: auto;
-  }
-}
+      .nav-links a {
+        margin: 4px 6px;
+        font-size: 0.95rem;
+      }
 
+      .product h3 {
+        font-size: 0.95rem;
+        min-height: auto;
+      }
+
+      .product a {
+        font-size: 0.95rem;
+        padding: 7px 12px;
+      }
+    }
   </style>
 </head>
 <body>
