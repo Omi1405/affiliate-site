@@ -3,17 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Find top deals on electronics, mobiles, laptops and more from amazon_apb deals – updated with affiliate links from Amazon.in."/>
   <title>amazon_apb deals</title>
   <style>
-    :root {
-      --primary-color: #ff9900;
-      --secondary-color: #131921;
-      --text-dark: #111;
-      --text-light: #fff;
-      --hover-color: #e6b800;
-    }
-
     * {
       margin: 0;
       padding: 0;
@@ -21,67 +12,52 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-      color: #222;
-      line-height: 1.5;
+      font-family: 'Arial', sans-serif;
+      background-color: #eaeaea;
     }
 
+    /* Top Navbar */
     .navbar {
-      background-color: var(--secondary-color);
+      background-color: #131921;
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 16px;
-      color: var(--text-light);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 10px 20px;
+      color: white;
+      flex-wrap: wrap;
     }
 
-    .logo {
+    .navbar h1 {
       font-size: 1.6rem;
-      font-weight: bold;
-      color: var(--primary-color);
-    }
-
-    .search-box {
-      flex: 1 1 300px;
-      margin: 10px;
-      max-width: 400px;
+      color: #ff9900;
     }
 
     .search-box input {
-      width: 100%;
-      padding: 8px 12px;
+      width: 300px;
+      padding: 7px 10px;
       border-radius: 4px;
       border: none;
       outline: none;
-      font-size: 1rem;
     }
 
     .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      margin-top: 10px;
+      font-size: 0.9rem;
     }
 
     .nav-links a {
-      margin: 6px 10px;
-      color: var(--text-light);
+      margin: 0 10px;
+      color: white;
       text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
     }
 
     .nav-links a:hover {
       text-decoration: underline;
-      color: var(--primary-color);
     }
 
+    /* Product Grid */
     .product-container {
-      padding: 20px 16px;
+      padding: 20px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
@@ -90,164 +66,114 @@
     }
 
     .product {
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      background-color: white;
+      border-radius: 6px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
       text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transform: scale(1.02);
     }
 
     .product img {
       width: 100%;
-      max-height: 180px;
+      max-height: 200px;
       object-fit: contain;
-      margin-bottom: 10px;
+      transition: transform 0.3s;
+    }
+
+    .product img:hover {
+      transform: scale(1.05);
     }
 
     .product h3 {
       font-size: 1rem;
-      font-weight: 600;
-      min-height: 48px;
-      margin: 8px 0;
-    }
-
-    .price {
-      color: #b12704;
-      font-size: 1rem;
-      font-weight: bold;
-    }
-
-    .original-price {
-      text-decoration: line-through;
-      color: #565959;
-      font-size: 0.9rem;
-      margin-left: 6px;
-    }
-
-    .discount {
-      color: #007600;
-      font-size: 0.9rem;
-      margin-top: 4px;
+      margin: 10px 0;
+      min-height: 50px;
     }
 
     .product a {
       display: inline-block;
       margin-top: 10px;
-      padding: 8px 14px;
-      background-color: var(--primary-color);
-      color: var(--text-dark);
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
+      padding: 10px 15px;
+      background-color: #f0c14b;
+      border: 1px solid #a88734;
+      color: #111;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      font-weight: bold;
+      border-radius: 4px;
     }
 
     .product a:hover {
-      background-color: var(--hover-color);
+      background-color: #e6b800;
     }
 
     footer {
-      background-color: var(--secondary-color);
-      color: var(--text-light);
+      background-color: #131921;
+      color: white;
       text-align: center;
-      padding: 16px;
+      padding: 15px 0;
       font-size: 0.9rem;
-      margin-top: 30px;
+      margin-top: 40px;
     }
 
     @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 8px 12px;
-      }
-
-      .logo {
-        font-size: 1.4rem;
-        margin-bottom: 8px;
-      }
-
-      .search-box {
+      .search-box input {
         width: 100%;
-        margin: 6px 0;
-      }
-
-      .nav-links {
-        width: 100%;
-        justify-content: flex-start;
-        margin-top: 6px;
-      }
-
-      .nav-links a {
-        margin: 4px 6px;
-        font-size: 0.95rem;
-      }
-
-      .product h3 {
-        font-size: 0.95rem;
-        min-height: auto;
-      }
-
-      .product a {
-        font-size: 0.95rem;
-        padding: 7px 12px;
+        margin-top: 10px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="logo">amazon_<span style="color:#fff">apb</span> <span style="color:#ff9900">deals</span></div>
+  <!-- Header -->
+  <div class="navbar">
+    <h1>amazon_apb deals</h1>
     <div class="search-box">
-      <input type="text" placeholder="Search products... (coming soon)">
+      <input type="text" placeholder="Search products... (Coming soon)">
     </div>
-    <nav class="nav-links">
+    <div class="nav-links">
       <a href="#">Home</a>
       <a href="#">Electronics</a>
       <a href="#">Mobiles</a>
       <a href="#">Laptops</a>
-      <a href="#">Accessories</a>
-    </nav>
-  </header>
+      <a href="#">Headphones</a>
+    </div>
+  </div>
 
-  <main class="product-container">
-    <!-- Products Start -->
+  <!-- Products -->
+  <div class="product-container">
+
     <div class="product">
-      <img src="https://m.media-amazon.com/images/I/51hf5q7g13L._SX679_.jpg" alt="Wazdorf Sealing Clip">
-      <h3>Wazdorf Sealing Clip - Portable Mini Sealing Machine Handheld Packet Sealer</h3>
-      <div class="price">₹249 <span class="original-price">₹999</span></div>
-      <div class="discount">75% off</div>
-      <a href="https://amzn.to/4npF9VY" target="_blank">Buy Now</a>
+      <img src="https://m.media-amazon.com/images/I/71k3gOik46L._SL1500_.jpg" alt="boAt Airdopes">
+      <h3>boAt Airdopes 141 Wireless Earbuds</h3>
+      <a href="https://www.amazon.in/dp/B09YV7M2TS?tag=amazonafb-21" target="_blank">Buy Now</a>
     </div>
 
     <div class="product">
-      <img src="https://m.media-amazon.com/images/I/71775fRr+gL._SX522_.jpg" alt="Kitchen Weight Machine">
-      <h3>Atom 10Kg Kitchen Weight Machine, LCD Digital Scale for Home Baking</h3>
-      <div class="price">₹205 <span class="original-price">₹599</span></div>
-      <div class="discount">66% off</div>
-      <a href="https://amzn.to/4kVSUtv" target="_blank">Buy Now</a>
+      <img src="https://m.media-amazon.com/images/I/71n0H0O4LFL._SL1500_.jpg" alt="Noise ColorFit">
+      <h3>Noise ColorFit Pulse Grand Smart Watch</h3>
+      <a href="https://www.amazon.in/dp/B09NRK1GMC?tag=amazonafb-21" target="_blank">Buy Now</a>
     </div>
 
+    <!-- Add More Products Below -->
+    <!-- 
     <div class="product">
-      <img src="https://m.media-amazon.com/images/I/619-x575S9L._SX522_.jpg" alt="Silicone Panda Night Light">
-      <h3>Rechargeable Silicone Panda Night Light | 7-Color LED | Kids Room Decor</h3>
-      <div class="price">₹395 <span class="original-price">₹1000</span></div>
-      <div class="discount">66% off</div>
-      <a href="https://amzn.to/46aHsWr" target="_blank">Buy Now</a>
+      <img src="IMAGE_URL" alt="Product Name">
+      <h3>Product Title</h3>
+      <a href="AMAZON_AFFILIATE_LINK" target="_blank">Buy Now</a>
     </div>
-    <!-- Products End -->
-  </main>
+    -->
 
+  </div>
+
+  <!-- Footer -->
   <footer>
-    &copy; 2025 amazon_apb deals. This site contains affiliate links to Amazon.in. As an Amazon Associate, we earn from qualifying purchases.
+    © 2025 amazon_apb deals. This site contains affiliate links to Amazon.in
   </footer>
 
 </body>
