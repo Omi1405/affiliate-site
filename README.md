@@ -1,1 +1,67 @@
 # affiliate-site
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amazon_APB Deals</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-4 text-center text-2xl font-bold">
+    Amazon_APB Deals
+  </header>
+
+  <!-- Search Bar -->
+  <div class="p-4 text-center">
+    <input type="text" id="searchInput" placeholder="Search products..." class="p-2 border border-gray-300 rounded w-full max-w-md">
+  </div>
+
+  <!-- Products -->
+  <section id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
+    <!-- Product Template -->
+    <div class="product bg-white p-4 rounded shadow">
+      <img src="https://via.placeholder.com/300x200" alt="Product" class="mb-2 w-full rounded">
+      <h3 class="product-title font-bold text-lg">Wireless Bluetooth Headphones</h3>
+      <p class="text-sm mb-2">High-quality sound with noise cancellation.</p>
+      <a href="https://www.amazon.in/dp/YOUR_AFFILIATE_LINK_1" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Buy Now</a>
+    </div>
+
+    <div class="product bg-white p-4 rounded shadow">
+      <img src="https://via.placeholder.com/300x200" alt="Product" class="mb-2 w-full rounded">
+      <h3 class="product-title font-bold text-lg">Smart Fitness Band</h3>
+      <p class="text-sm mb-2">Track your health and activities in style.</p>
+      <a href="https://www.amazon.in/dp/YOUR_AFFILIATE_LINK_2" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Buy Now</a>
+    </div>
+
+    <div class="product bg-white p-4 rounded shadow">
+      <img src="https://via.placeholder.com/300x200" alt="Product" class="mb-2 w-full rounded">
+      <h3 class="product-title font-bold text-lg">Laptop Cooling Pad</h3>
+      <p class="text-sm mb-2">Keep your laptop cool during long work sessions.</p>
+      <a href="https://www.amazon.in/dp/YOUR_AFFILIATE_LINK_3" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Buy Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white text-center p-4 mt-8">
+    &copy; 2025 Amazon_APB. All rights reserved.
+  </footer>
+
+  <!-- Search Script -->
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const products = document.querySelectorAll('.product');
+
+    searchInput.addEventListener('input', () => {
+      const searchValue = searchInput.value.toLowerCase();
+      products.forEach(product => {
+        const title = product.querySelector('.product-title').textContent.toLowerCase();
+        product.style.display = title.includes(searchValue) ? 'block' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
