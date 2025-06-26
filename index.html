@@ -13,23 +13,23 @@
 
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #eaeaea;
+      background-color: #f2f2f2;
     }
 
-    /* Top Navbar */
     .navbar {
       background-color: #131921;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
       color: white;
-      flex-wrap: wrap;
     }
 
     .navbar h1 {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       color: #ff9900;
+      margin-bottom: 10px;
     }
 
     .search-box input {
@@ -41,8 +41,8 @@
     }
 
     .nav-links {
-      margin-top: 10px;
       font-size: 0.9rem;
+      margin-top: 10px;
     }
 
     .nav-links a {
@@ -55,12 +55,11 @@
       text-decoration: underline;
     }
 
-    /* Product Grid */
     .product-container {
-      padding: 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
+      padding: 20px;
       max-width: 1200px;
       margin: auto;
     }
@@ -69,9 +68,9 @@
       background-color: white;
       border-radius: 6px;
       padding: 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       text-align: center;
+      transition: 0.3s ease;
     }
 
     .product:hover {
@@ -82,11 +81,6 @@
       width: 100%;
       max-height: 200px;
       object-fit: contain;
-      transition: transform 0.3s;
-    }
-
-    .product img:hover {
-      transform: scale(1.05);
     }
 
     .product h3 {
@@ -95,9 +89,15 @@
       min-height: 50px;
     }
 
+    .price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #B12704;
+      margin-bottom: 10px;
+    }
+
     .product a {
       display: inline-block;
-      margin-top: 10px;
       padding: 10px 15px;
       background-color: #f0c14b;
       border: 1px solid #a88734;
@@ -117,12 +117,47 @@
       text-align: center;
       padding: 15px 0;
       font-size: 0.9rem;
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
-    @media (max-width: 768px) {
+    #topBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 20px;
+      background-color: #ff9900;
+      border: none;
+      padding: 10px 15px;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 50px;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 1024px) {
+      .product-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       .search-box input {
         width: 100%;
+        margin-top: 10px;
+      }
+
+      .product-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+      }
+
+      .nav-links {
         margin-top: 10px;
       }
     }
@@ -130,7 +165,6 @@
 </head>
 <body>
 
-  <!-- Header -->
   <div class="navbar">
     <h1>amazon_apb deals</h1>
     <div class="search-box">
@@ -145,54 +179,55 @@
     </div>
   </div>
 
-  <!-- Products -->
-   <main class="product-container">
-    <!-- Products Start -->
+  <main class="product-container">
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/51hf5q7g13L._SX679_.jpg" alt="Wazdorf Sealing Clip">
       <h3>Wazdorf Sealing Clip - Portable Mini Sealing Machine Handheld Packet Sealer</h3>
-      <div class="price">₹249 <span></span>
+      <div class="price">₹249</div>
       <a href="https://amzn.to/4npF9VY" target="_blank">Buy Now</a>
     </div>
 
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/71775fRr+gL._SX522_.jpg" alt="Kitchen Weight Machine">
       <h3>Atom 10Kg Kitchen Weight Machine, LCD Digital Scale for Home Baking</h3>
-      <div class="price">₹205 <span></span>
+      <div class="price">₹205</div>
       <a href="https://amzn.to/4kVSUtv" target="_blank">Buy Now</a>
     </div>
 
     <div class="product">
       <img src="https://m.media-amazon.com/images/I/619-x575S9L._SX522_.jpg" alt="Silicone Panda Night Light">
       <h3>Rechargeable Silicone Panda Night Light | 7-Color LED | Kids Room Decor</h3>
-      <div class="price">₹395 <span></span>
+      <div class="price">₹395</div>
       <a href="https://amzn.to/46aHsWr" target="_blank">Buy Now</a>
     </div>
 
-       <div class="product">
+    <div class="product">
       <img src="https://m.media-amazon.com/images/I/41upDGylJtL._MCnd_AC_.jpg" alt="Tom & Jerry Cute Sleeping Car Interior Accessory">
-      <h3>Tom & Jerry Cute Sleeping Car Interior Accessory </h3>
-      <div class="price">₹281 <span></span>
+      <h3>Tom & Jerry Cute Sleeping Car Interior Accessory</h3>
+      <div class="price">₹281</div>
       <a href="https://amzn.to/4kdcUHd" target="_blank">Buy Now</a>
     </div>
-    <!-- Products End -->
   </main>
 
-    <!-- Add More Products Below -->
-    <!-- 
-    <div class="product">
-      <img src="IMAGE_URL" alt="Product Name">
-      <h3>Product Title</h3>
-      <a href="AMAZON_AFFILIATE_LINK" target="_blank">Buy Now</a>
-    </div>
-    -->
+  <!-- Back to Top Button -->
+  <button id="topBtn" onclick="scrollToTop()">↑ Top</button>
 
-  </div>
-
-  <!-- Footer -->
   <footer>
     © 2025 amazon_apb deals. This site contains affiliate links to Amazon.in
   </footer>
+
+  <script>
+    // Show/hide top button
+    const topBtn = document.getElementById("topBtn");
+    window.onscroll = function () {
+      topBtn.style.display = (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) ? "block" : "none";
+    };
+
+    // Scroll to top function
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>
